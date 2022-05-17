@@ -1,7 +1,7 @@
 // Dependencies
 var quizDiv = document.getElementById("#quiz");
-var startButton = docuement.getElementById("#start");
-
+var startButton = document.getElementById("#start");
+var timerElement = document.getElementById("#timer")
 
 // State
 var timeLeft = 75;
@@ -38,20 +38,37 @@ var quizQuestions = [
     }
   ];
 
+  console.log(quizQuestions[0]);
+
 
 // Functions
+function timerUpdate() {
+    var timerInterval = setInterval(function() {
+        timeLeft--;
+        timerElement.textContent = timeLeft + " seconds left.";
+
+        if(timeLeft === 0) {
+            clearInterval(timerInterval);
+            //Call function here for gameOver
+        }
+    }, 1000);
+}
+
+
 function runQuiz() {
     //start timer
+    timerUpdate();
     //choose a question to ask user
+    
     //did they choose correctly?
     //did they chose incorrectly?
     //if they chose incorrectly decrement remaining time
     //if they answered correctly display next question
     //when questions run out log the time left as their score
     //store intitials and score to localStorage
-}
+};
 
 // User Interactions
-buttonElement.addEventListener('click', runQuiz);
+startButton.addEventListener('click', runQuiz);
 
 // Initialize
