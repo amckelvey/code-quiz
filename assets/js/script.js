@@ -41,11 +41,17 @@ var quizQuestions = [
 
 // Functions
 function runQuiz() {
-    
+    //start timer
+    //choose a question to ask user
+    //did they choose correctly?
+    //did they chose incorrectly?
+    //if they chose incorrectly decrement remaining time
+    //if they answered correctly display next question
+    //when questions run out log the time left as their score
+    //store intitials and score to localStorage
 }
 
 // User Interactions
 buttonElement.addEventListener('click', runQuiz);
 
 // Initialize
-runQuiz();
