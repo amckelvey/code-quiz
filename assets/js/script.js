@@ -1,7 +1,13 @@
 // Dependencies
-var quizDiv = document.getElementById("#quiz");
-var startButton = document.getElementById("#start");
-var timerElement = document.getElementById("#timer")
+var promptDiv = document.getElementById("prompt");
+var startButton = document.getElementById("start");
+var timerElement = document.getElementById("timer");
+var quizDiv = document.getElementById("quiz");
+var questionH1 = document.getElementById("question-holder");
+var answerButton1 = document.getElementById("answer1-button");
+var answerButton2 = document.getElementById("answer2-button");
+var answerButton3 = document.getElementById("answer3-button");
+var answerButton4 = document.getElementById("answer4-button");
 
 // State
 var timeLeft = 75;
@@ -42,6 +48,10 @@ var quizQuestions = [
 
 
 // Functions
+for (i = 0; i < quizQuestions.length; i++) {
+    
+}
+
 function timerUpdate() {
     var timerInterval = setInterval(function() {
         timeLeft--;
@@ -55,10 +65,10 @@ function timerUpdate() {
 }
 
 
-function runQuiz() {
-    //start timer
+function runQuiz(e) {
+  e.preventDefault();
+    //hide the prompt
     timerUpdate();
-    //choose a question to ask user
     
     //did they choose correctly?
     //did they chose incorrectly?
@@ -69,6 +79,6 @@ function runQuiz() {
 };
 
 // User Interactions
-startButton.addEventListener('click', runQuiz);
+startButton.addEventListener("click", runQuiz);
 
 // Initialize
